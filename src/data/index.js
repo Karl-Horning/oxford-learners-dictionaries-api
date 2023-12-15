@@ -1,3 +1,4 @@
 const getEntry = require("./getEntry.data");
+const searchFirst = require("./searchFirst.data");
 
-module.exports = getEntry;
+module.exports = { getEntry, searchFirst };
