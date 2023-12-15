@@ -1,6 +1,6 @@
-const fetchData = require("./data");
+const getEntry = require("./data");
 
-fetchData((error, entryContent) => {
+getEntry((error, entryContent) => {
     if (error) {
         console.error("Error:", error.message);
     } else {

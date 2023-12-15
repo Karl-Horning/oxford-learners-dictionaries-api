@@ -5,7 +5,7 @@ require("dotenv").config({ path: path.resolve(__dirname, "../../.env") });
 // apiCaller.js
 const https = require("https");
 
-function fetchData(callback) {
+function getEntry(callback) {
     const baseUrl = process.env.BASE_URL;
     const accessKey = process.env.API_KEY;
 
@@ -49,4 +49,4 @@ function fetchData(callback) {
     req.end();
 }
 
-module.exports = fetchData;
+module.exports = getEntry;

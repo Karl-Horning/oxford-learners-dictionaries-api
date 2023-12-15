@@ -1,3 +1,3 @@
-const fetchData = require("./getEntry");
+const getEntry = require("./getEntry");
 
-module.exports = fetchData;
+module.exports = getEntry;
