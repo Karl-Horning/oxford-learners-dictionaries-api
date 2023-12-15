@@ -1,0 +1,120 @@
+/* Fonts */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Font colours */
+q,
+.copyright,
+.pos-g,
+.phon,
+.prefix,
+.v-gs {
+    color: grey;
+}
+
+.collo,
+.x-gs q::before {
+    color: black;
+}
+
+/* Font styles */
+q,
+.pos-g {
+    font-style: italic;
+}
+
+.collo {
+    font-style: normal;
+}
+
+/* Font weights */
+.collo,
+.cl,
+.pos,
+.seo,
+.shcut,
+.v-g,
+.xrGrp {
+    font-weight: bold;
+}
+
+/* Display */
+.def,
+.phonetics,
+.pos-g,
+.seo,
+.xrGrp a {
+    display: inline-block;
+}
+
+q,
+.prefix,
+.shcut,
+.topic-g,
+.xr-gs {
+    display: block;
+}
+
+/* Other */
+span,
+q {
+    margin-bottom: 10px;
+}
+
+.seo {
+    font-size: large;
+}
+
+.shcut {
+    font-size: large;
+    margin: 25px 0;
+}
+
+.xrGrp a {
+    border: 2px solid #ccc;
+    border-radius: 10px; /* Add curved corners */
+    color: #1e90ff;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+.def .xrGrp a {
+    /* Override styles for .ndv here */
+    border: none !important;
+    border-radius: 0 !important;
+    color: #1e90ff !important; /* or specify the color you want */
+    display: inline !important; /* or revert to the default display value */
+    padding: 0 !important;
+    /* text-decoration: underline !important; or specify the text decoration you want */
+}
+
+.x-gs q::before {
+    content: "• ";
+}
+
+.xr-gs {
+    padding-top: 15px;
+}
+
+.prefix::after {
+    content: ":";
+}
+
+.prefix {
+    text-transform: uppercase;
+}
+
+.sn-g,
+.sense-topg {
+    display: inline-block;
+}
+
+.phonetics {
+    float: right;
+}
+
+.copyright {
+    font-size: xx-small;
+}
