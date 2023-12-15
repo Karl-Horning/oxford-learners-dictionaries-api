@@ -1,5 +1,4 @@
 const cheerio = require("cheerio");
-const getEntry = require("../data");
 
 /**
  * Adds a stylesheet link to the head of the HTML document.
@@ -92,18 +91,4 @@ const formatEntry = (html) => {
     return $.html();
 };
 
-/**
- * Retrieves entry data, formats it, and logs the result.
- */
-const getData = async () => {
-    try {
-        const html = await getEntry();
-        const formattedEntry = formatEntry(html);
-        console.log("Entry Content:", formattedEntry);
-    } catch (error) {
-        console.error("Error:", error.message);
-    }
-};
-
-// Call the function
-getData();
+module.exports = formatEntry;
