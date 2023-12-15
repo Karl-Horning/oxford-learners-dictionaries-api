@@ -1,24 +1,48 @@
 const cheerio = require("cheerio");
 const getEntry = require("../data");
 
+/**
+ * Adds a stylesheet link to the head of the HTML document.
+ * @param {Cheerio} head - The Cheerio object representing the head element.
+ * @param {string} cssFile - The name of the CSS file to be linked.
+ */
 const addStyleSheetToHead = (head, cssFile) => {
     head.append(`<link rel="stylesheet" type="text/css" href="${cssFile}">`);
 };
 
+/**
+ * Adds a charset meta tag to the head of the HTML document.
+ * @param {Cheerio} head - The Cheerio object representing the head element.
+ */
 const addCharsetToHead = (head) => {
     head.append('<meta charset="UTF-8" />');
 };
 
+/**
+ * Adds a copyright footer to the main content of the HTML document.
+ * @param {Cheerio} main - The Cheerio object representing the main content element.
+ * @param {string} q - The value obtained from the span.seo element.
+ */
 const addCopyrightFooter = (main, q) => {
     main.append(
         `<footer><span class="copyright">(Definition of ${q} from Oxford Advanced Learner's Dictionary © Oxford University Press)</span></footer>`
     );
 };
 
+/**
+ * Removes specified elements from the HTML document using provided selectors.
+ * @param {CheerioStatic} $ - The Cheerio object representing the entire HTML document.
+ * @param {string[]} selectors - An array of CSS selectors identifying elements to be removed.
+ */
 const removeElements = ($, selectors) => {
     selectors.forEach((selector) => $(selector).remove());
 };
 
+/**
+ * Formats the HTML document by manipulating its structure and content.
+ * @param {string} html - The raw HTML content to be formatted.
+ * @returns {string} - The formatted HTML content.
+ */
 const formatEntry = (html) => {
     const $ = cheerio.load(html);
     const q = $("span.seo").text();
@@ -68,6 +92,9 @@ const formatEntry = (html) => {
     return $.html();
 };
 
+/**
+ * Retrieves entry data, formats it, and logs the result.
+ */
 const getData = async () => {
     try {
         const html = await getEntry();
