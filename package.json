@@ -1,0 +1,15 @@
+{
+  "name": "oxford-learners-dictionaries-api",
+  "version": "1.0.0",
+  "description": "Get entries from the Oxford Learner's Dictionaries API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Karl Horning",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
