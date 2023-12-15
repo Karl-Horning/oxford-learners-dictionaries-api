@@ -11,7 +11,7 @@ const {
  * @returns {Promise<string>} A Promise that resolves with the formatted entry content.
  * @throws {Error} Throws an error if there's an issue with the HTTP request or data handling.
  */
-function getEntry() {
+const getEntry = () => {
     return new Promise((resolve, reject) => {
         const params = { format: "html" };
         const apiUrl = buildApiUrl({ urlSuffix: "entries/test_1", params });
