@@ -1,10 +1,11 @@
 const getEntry = require("./data");
+const formatEntry = require("./services");
 
 async function getData() {
     try {
         const entryContent = await getEntry();
-        console.log("Entry Content:", entryContent);
-        // Do something with entryContent here
+        const formattedEntry = formatEntry(entryContent);
+        console.log("Entry Content:", formattedEntry);
     } catch (error) {
         console.error("Error:", error.message);
     }
