@@ -14,7 +14,6 @@ const API_KEY = process.env.API_KEY;
  * @returns {string} The constructed API URL.
  */
 function buildApiUrl({ urlSuffix, params }) {
-    // const params = { format: FORMAT };
     return `${BASE_URL}${urlSuffix}?${new URLSearchParams(params).toString()}`;
 }
 
