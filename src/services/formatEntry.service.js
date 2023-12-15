@@ -2,6 +2,7 @@ const cheerio = require("cheerio");
 
 /**
  * Adds a stylesheet link to the head of the HTML document.
+ *
  * @param {Cheerio} head - The Cheerio object representing the head element.
  * @param {string} cssFile - The name of the CSS file to be linked.
  */
@@ -11,6 +12,7 @@ const addStyleSheetToHead = (head, cssFile) => {
 
 /**
  * Adds a charset meta tag to the head of the HTML document.
+ *
  * @param {Cheerio} head - The Cheerio object representing the head element.
  */
 const addCharsetToHead = (head) => {
@@ -19,6 +21,7 @@ const addCharsetToHead = (head) => {
 
 /**
  * Adds a copyright footer to the main content of the HTML document.
+ *
  * @param {Cheerio} main - The Cheerio object representing the main content element.
  * @param {string} q - The value obtained from the span.seo element.
  */
@@ -30,6 +33,7 @@ const addCopyrightFooter = (main, q) => {
 
 /**
  * Removes specified elements from the HTML document using provided selectors.
+ *
  * @param {CheerioStatic} $ - The Cheerio object representing the entire HTML document.
  * @param {string[]} selectors - An array of CSS selectors identifying elements to be removed.
  */
@@ -39,6 +43,7 @@ const removeElements = ($, selectors) => {
 
 /**
  * Formats the HTML document by manipulating its structure and content.
+ *
  * @param {string} html - The raw HTML content to be formatted.
  * @returns {string} - The formatted HTML content.
  */
@@ -81,7 +86,7 @@ const formatEntry = (html) => {
 
     // Manipulate head
     const head = $("head");
-    addStyleSheetToHead(head, "style.css");
+    addStyleSheetToHead(head, "../css/style.css");
     addCharsetToHead(head);
 
     // Manipulate main
