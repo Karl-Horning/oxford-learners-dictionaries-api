@@ -38,7 +38,12 @@ const addCopyrightFooter = (main, q) => {
  * @param {string[]} selectors - An array of CSS selectors identifying elements to be removed.
  */
 const removeElements = ($, selectors) => {
-    selectors.forEach((selector) => $(selector).remove());
+    selectors.forEach((selector) => {
+        const elements = $(selector);
+        if (elements.length > 0) {
+            elements.remove();
+        }
+    });
 };
 
 /**
