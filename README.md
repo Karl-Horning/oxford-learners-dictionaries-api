@@ -11,6 +11,7 @@ Used to get entries from the Oxford Learner's Dictionaries API.
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
+- [Author](#author)
 
 ## Description
 
