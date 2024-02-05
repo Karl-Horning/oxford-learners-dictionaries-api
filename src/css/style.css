@@ -71,6 +71,7 @@ q {
     margin: 25px 0;
 }
 
+/* Styling for external links */
 .xrGrp a {
     border: 2px solid #ccc;
     border-radius: 10px; /* Add curved corners */
@@ -80,24 +81,26 @@ q {
     text-decoration: none;
 }
 
+/* Override styles for .ndv within .def */
 .def .xrGrp a {
-    /* Override styles for .ndv here */
     border: none !important;
     border-radius: 0 !important;
-    color: #1e90ff !important; /* or specify the color you want */
-    display: inline !important; /* or revert to the default display value */
+    color: #1e90ff !important; /* Specify color */
+    display: inline !important; /* Revert to default display value */
     padding: 0 !important;
-    /* text-decoration: underline !important; or specify the text decoration you want */
+    /* text-decoration: underline !important; Specify text decoration */
 }
 
+/* Styling for list items in .x-gs */
 .x-gs q::before {
-    content: "• ";
+    content: "• "; /* Add bullet point before list items */
 }
 
 .xr-gs {
     padding-top: 15px;
 }
 
+/* Adding a colon after elements with class .prefix */
 .prefix::after {
     content: ":";
 }
@@ -106,15 +109,18 @@ q {
     text-transform: uppercase;
 }
 
+/* Inline display for certain elements */
 .sn-g,
 .sense-topg {
     display: inline-block;
 }
 
+/* Aligning phonetic transcription to the right */
 .phonetics {
     float: right;
 }
 
+/* Copyright styling */
 .copyright {
     font-size: xx-small;
 }
