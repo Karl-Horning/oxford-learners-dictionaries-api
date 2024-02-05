@@ -6,9 +6,9 @@ const { fetchData } = require("../services");
  * @returns {Promise<string>} A Promise that resolves with the formatted entry content.
  * @throws {Error} Throws an error if there's an issue with the HTTP request or data handling.
  */
-const getEntry = () => {
+const getEntry = (entry) => {
     const params = { format: "html" };
-    return fetchData({ urlSuffix: "entries/test_1", params });
+    return fetchData({ urlSuffix: `entries/${entry}`, params });
 };
 
 module.exports = getEntry;

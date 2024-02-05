@@ -1,9 +1,10 @@
 const { getEntry } = require("./data");
 const { formatEntry, writeHtmlToFile } = require("./services");
 
-getData = async () => {
+getData = async (entry) => {
     try {
-        const entryContent = await getEntry();
+        console.log(`Getting entry: ${entry}`);
+        const entryContent = await getEntry(entry);
         const formattedEntry = formatEntry(entryContent);
         writeHtmlToFile(formattedEntry);
     } catch (error) {
@@ -12,4 +13,4 @@ getData = async () => {
 };
 
 // Call the function
-getData();
+getData("test_1");
