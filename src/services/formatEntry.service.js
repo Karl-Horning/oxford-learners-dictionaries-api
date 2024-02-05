@@ -59,6 +59,9 @@ const formatEntry = (html) => {
     // Replace the header tag with a main tag
     $("header").replaceWith(() => $("<main>").html($("header").html()));
 
+    // Select the HTML tag and add the lang attribute
+    $("html").attr("lang", "en");
+
     // Remove unnecessary elements
     const selectorsToRemove = [
         // Remove the autocomplete fields
