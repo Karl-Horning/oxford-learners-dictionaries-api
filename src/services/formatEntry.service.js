@@ -30,7 +30,7 @@ const addCharsetToHead = (head) => {
  */
 const addCopyrightFooter = (main, q) => {
     main.append(
-        `<footer><span class="copyright">(Definition of ${q} from Oxford Advanced Learner's Dictionary © Oxford University Press)</span></footer>`
+        `<footer><span class="copyright">(Definition of <strong>${q}</strong> from Oxford Advanced Learner's Dictionary © Oxford University Press)</span></footer>`
     );
 };
 
