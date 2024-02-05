@@ -48,6 +48,15 @@ const handleResponseData = (data) => {
     }
 };
 
+/**
+ * Makes an HTTP request to the configured API and retrieves entry data.
+ *
+ * @param {Object} options - The options for the API request.
+ * @param {string} options.urlSuffix - The URL suffix to be appended to the base API URL.
+ * @param {Object} options.params - Additional parameters for the API request.
+ * @returns {Promise<string>} A Promise that resolves with the formatted entry content.
+ * @throws {Error} Throws an error if there's an issue with the HTTP request or data handling.
+ */
 const fetchData = ({ urlSuffix, params }) => {
     return new Promise((resolve, reject) => {
         const apiUrl = buildApiUrl({ urlSuffix, params });

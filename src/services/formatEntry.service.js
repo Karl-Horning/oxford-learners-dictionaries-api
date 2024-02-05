@@ -5,6 +5,7 @@ const cheerio = require("cheerio");
  *
  * @param {Cheerio} head - The Cheerio object representing the head element.
  * @param {string} cssFile - The name of the CSS file to be linked.
+ * @returns {void} - The function does not return a value.
  */
 const addStyleSheetToHead = (head, cssFile) => {
     head.append(`<link rel="stylesheet" type="text/css" href="${cssFile}">`);
@@ -14,6 +15,7 @@ const addStyleSheetToHead = (head, cssFile) => {
  * Adds a charset meta tag to the head of the HTML document.
  *
  * @param {Cheerio} head - The Cheerio object representing the head element.
+ * @returns {void} - The function does not return a value.
  */
 const addCharsetToHead = (head) => {
     head.append('<meta charset="UTF-8" />');
@@ -24,6 +26,7 @@ const addCharsetToHead = (head) => {
  *
  * @param {Cheerio} main - The Cheerio object representing the main content element.
  * @param {string} q - The value obtained from the span.seo element.
+ * @returns {void} - The function does not return a value.
  */
 const addCopyrightFooter = (main, q) => {
     main.append(
@@ -36,6 +39,7 @@ const addCopyrightFooter = (main, q) => {
  *
  * @param {CheerioStatic} $ - The Cheerio object representing the entire HTML document.
  * @param {string[]} selectors - An array of CSS selectors identifying elements to be removed.
+ * @returns {void} - The function does not return a value.
  */
 const removeElements = ($, selectors) => {
     selectors.forEach((selector) => {
@@ -101,7 +105,11 @@ const formatEntry = (html) => {
     const main = $("main");
     addCopyrightFooter(main, q);
 
-    return $.html();
+    // Replace XML with HTML declaration
+    return $.html().replace(
+        '<!--?xml version="1.0" encoding="utf-8"?-->',
+        "<!DOCTYPE html>"
+    );
 };
 
 module.exports = formatEntry;
