@@ -6,7 +6,12 @@ getData = async (entry) => {
         console.log(`Getting entry: ${entry}`);
         const entryContent = await getEntry(entry);
         const formattedEntry = formatEntry(entryContent);
-        writeHtmlToFile(formattedEntry);
+        writeHtmlToFile(
+            formattedEntry.replace(
+                '<!--?xml version="1.0" encoding="utf-8"?-->',
+                "<!DOCTYPE html>"
+            )
+        );
     } catch (error) {
         console.error("Error:", error.message);
     }
