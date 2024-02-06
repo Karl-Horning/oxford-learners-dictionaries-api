@@ -118,9 +118,15 @@ q {
 /* Aligning phonetic transcription to the right */
 .phonetics {
     float: right;
+    cursor: pointer;
 }
 
 /* Copyright styling */
 .copyright {
     font-size: xx-small;
+}
+
+/* Font style when audio is playing */
+.audio-playing .phon {
+    color: #1e90ff;
 }
