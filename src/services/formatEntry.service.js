@@ -12,6 +12,17 @@ const addStyleSheetToHead = (head, cssFile) => {
 };
 
 /**
+ * Adds a script link to the body of the HTML document.
+ *
+ * @param {Cheerio} body - The Cheerio object representing the body element.
+ * @param {string} script - The name of the script file to be linked.
+ * @returns {void} - The function does not return a value.
+ */
+const addScriptToBody = (body, script) => {
+    body.append(`<script src="${script}" defer></script>`);
+};
+
+/**
  * Adds a charset meta tag to the head of the HTML document.
  *
  * @param {Cheerio} head - The Cheerio object representing the head element.
@@ -104,6 +115,10 @@ const formatEntry = (html) => {
     // Manipulate main
     const main = $("main");
     addCopyrightFooter(main, q);
+
+    // Manipulate body
+    const body = $("body");
+    addScriptToBody(body, "../js/script.js");
 
     // Replace XML with HTML declaration
     return $.html().replace(
