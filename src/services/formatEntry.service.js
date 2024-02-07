@@ -118,6 +118,26 @@ const updateBody = ($) => {
 };
 
 /**
+ * Sanitizes the HTML output by replacing XML declaration with HTML declaration
+ * and replacing multiple whitespace with a single space.
+ *
+ * @param {string} html - The HTML content to be sanitized.
+ * @returns {string} - The sanitized HTML content.
+ */
+const sanitizeHtmlOutput = (html) => {
+    return (
+        html
+            // Replace XML with HTML declaration
+            .replace(
+                '<!--?xml version="1.0" encoding="utf-8"?-->',
+                "<!DOCTYPE html>"
+            )
+            // Replace multiple whitespace with a single space
+            .replace(/\s+/g, " ")
+    );
+};
+
+/**
  * Formats the HTML document by manipulating its structure and content.
  *
  * @param {string} html - The raw HTML content to be formatted.
@@ -125,55 +145,44 @@ const updateBody = ($) => {
  * @throws {Error} If an error occurs during HTML load or manipulation.
  */
 const formatEntry = (html) => {
+    // Unnecessary elements to remove
+    const selectorsToRemove = [
+        // Remove the autocomplete fields
+        "span.autocompletes",
+        // Removed '[word] [type]' (for example, 'test noun' from next to .seo)
+        "span.browse",
+        // Remove all of the collapsible elements (like 'Collocations')
+        "span.collapse",
+        // Remove the dictionary links
+        "span.dictlink-g",
+        // Removes the index of definitions that are available in the page
+        "span.indexing",
+        // Remove the idioms
+        "span.idm-gs",
+        // Remove the link to the idioms at the end of the page
+        "span.jumplinks",
+        // Remove the word list from the end of the page
+        "span.mywordlist-g",
+        // Remove the pronunciations at the end of the page
+        "span.pracpron",
+        // Remove the commas in 'see also'
+        "span.sep",
+        // Removes the symbols (like 'A1', 'OPAL W', 'OPAL S') from the page
+        "span.symbol-g",
+        // Removes the topics under 'see also'
+        "span.topic-g",
+        // Add more selectors as needed
+    ];
+
     try {
         const $ = cheerio.load(html);
 
-        // Remove unnecessary elements
-        const selectorsToRemove = [
-            // Remove the autocomplete fields
-            "span.autocompletes",
-            // Removed '[word] [type]' (for example, 'test noun' from next to .seo)
-            "span.browse",
-            // Remove all of the collapsible elements (like 'Collocations')
-            "span.collapse",
-            // Remove the dictionary links
-            "span.dictlink-g",
-            // Removes the index of definitions that are available in the page
-            "span.indexing",
-            // Remove the idioms
-            "span.idm-gs",
-            // Remove the link to the idioms at the end of the page
-            "span.jumplinks",
-            // Remove the word list from the end of the page
-            "span.mywordlist-g",
-            // Remove the pronunciations at the end of the page
-            "span.pracpron",
-            // Remove the commas in 'see also'
-            "span.sep",
-            // Removes the symbols (like 'A1', 'OPAL W', 'OPAL S') from the page
-            "span.symbol-g",
-            // Removes the topics under 'see also'
-            "span.topic-g",
-            // Add more selectors as needed
-        ];
         removeElements($, selectorsToRemove);
-
         updateHead($);
-
         updateMain($);
-
         updateBody($);
 
-        return (
-            $.html()
-                // Replace XML with HTML declaration
-                .replace(
-                    '<!--?xml version="1.0" encoding="utf-8"?-->',
-                    "<!DOCTYPE html>"
-                )
-                // Replace multiple whitespaces with a single space
-                .replace(/\s+/g, " ")
-        );
+        return sanitizeHtmlOutput($.html());
     } catch (error) {
         console.error("Error occurred during HTML formatting:", error);
         // If an error occurs, return the original HTML
