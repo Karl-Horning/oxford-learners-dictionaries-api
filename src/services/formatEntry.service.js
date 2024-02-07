@@ -51,7 +51,6 @@ const addCopyrightFooter = (main, q) => {
  * @param {CheerioStatic} $ - The Cheerio object representing the entire HTML document.
  * @param {string[]} selectors - An array of CSS selectors identifying elements to be removed.
  * @returns {void} - The function does not return a value.
- *
  * @throws {Error} If an error occurs during HTML manipulation.
  */
 const removeElements = ($, selectors) => {
@@ -74,21 +73,60 @@ const removeElements = ($, selectors) => {
 };
 
 /**
+ * Updates the head section of the HTML document.
+ *
+ * @param {CheerioStatic} $ - The Cheerio object representing the entire HTML document.
+ * @returns {void} - The function does not return a value.
+ */
+const updateHead = ($) => {
+    // Replace the header tag with a main tag
+    $("header").replaceWith(() => $("<main>").html($("header").html()));
+
+    // Select the HTML tag and add the lang attribute
+    $("html").attr("lang", "en");
+
+    // Manipulate head
+    const head = $("head");
+    addStyleSheetToHead(head, "../css/style.css");
+    addCharsetToHead(head);
+};
+
+/**
+ * Updates the main section of the HTML document.
+ *
+ * @param {CheerioStatic} $ - The Cheerio object representing the entire HTML document.
+ * @returns {void} - The function does not return a value.
+ */
+const updateMain = ($) => {
+    const q = $("span.seo").text();
+    const main = $("main");
+
+    // Manipulate main
+    addCopyrightFooter(main, q);
+};
+
+/**
+ * Updates the body section of the HTML document.
+ *
+ * @param {CheerioStatic} $ - The Cheerio object representing the entire HTML document.
+ * @returns {void} - The function does not return a value.
+ */
+const updateBody = ($) => {
+    // Manipulate body
+    const body = $("body");
+    addScriptToBody(body, "../js/script.js");
+};
+
+/**
  * Formats the HTML document by manipulating its structure and content.
  *
  * @param {string} html - The raw HTML content to be formatted.
  * @returns {string} - The formatted HTML content.
+ * @throws {Error} If an error occurs during HTML load or manipulation.
  */
 const formatEntry = (html) => {
     try {
         const $ = cheerio.load(html);
-        const q = $("span.seo").text();
-
-        // Replace the header tag with a main tag
-        $("header").replaceWith(() => $("<main>").html($("header").html()));
-
-        // Select the HTML tag and add the lang attribute
-        $("html").attr("lang", "en");
 
         // Remove unnecessary elements
         const selectorsToRemove = [
@@ -120,23 +158,21 @@ const formatEntry = (html) => {
         ];
         removeElements($, selectorsToRemove);
 
-        // Manipulate head
-        const head = $("head");
-        addStyleSheetToHead(head, "../css/style.css");
-        addCharsetToHead(head);
+        updateHead($);
 
-        // Manipulate main
-        const main = $("main");
-        addCopyrightFooter(main, q);
+        updateMain($);
 
-        // Manipulate body
-        const body = $("body");
-        addScriptToBody(body, "../js/script.js");
+        updateBody($);
 
-        // Replace XML with HTML declaration
-        return $.html().replace(
-            '<!--?xml version="1.0" encoding="utf-8"?-->',
-            "<!DOCTYPE html>"
+        return (
+            $.html()
+                // Replace XML with HTML declaration
+                .replace(
+                    '<!--?xml version="1.0" encoding="utf-8"?-->',
+                    "<!DOCTYPE html>"
+                )
+                // Replace multiple whitespaces with a single space
+                .replace(/\s+/g, " ")
         );
     } catch (error) {
         console.error("Error occurred during HTML formatting:", error);
