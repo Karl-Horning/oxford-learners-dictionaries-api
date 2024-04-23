@@ -58,9 +58,11 @@ Contributions are welcome! Please follow these guidelines:
 
 This project is licensed under the [MIT License](./LICENSE).
 
-## Contact
+## References
 
-For API key inquiries or support, please contact Jeanna Occhiogrosso.
+- [Oxford Learner's Dictionaries API](https://languages.oup.com/oxford-learners-dictionaries-api/)
+- [IDM SkPublish - REST API documentation](https://www.oxfordlearnersdictionaries.com/api/v1/documentation/html)
+- [DPS PitchLeads API Client Libraries](http://dps.api-lib.idm.fr)
 
 ## Author
 
