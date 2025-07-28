@@ -1,5 +1,7 @@
 # Oxford Learner's Dictionaries API Entry Fetcher
 
+---
+
 ## 📖 Table of Contents
 
 - [Oxford Learner's Dictionaries API Entry Fetcher](#oxford-learners-dictionaries-api-entry-fetcher)
@@ -8,7 +10,7 @@
   - [🚀 Features](#-features)
   - [📁 Project Structure](#-project-structure)
   - [🛠️ Getting Started](#️-getting-started)
-    - [✅ Prerequisites](#-prerequisites)
+    - [📦 Prerequisites](#-prerequisites)
     - [🔧 Installation](#-installation)
   - [💡 Troubleshooting](#-troubleshooting)
   - [🎨 Styling](#-styling)
@@ -64,7 +66,7 @@ It uses Node.js to handle the API requests and Cheerio to parse and format the r
 
 ## 🛠️ Getting Started
 
-### ✅ Prerequisites
+### 📦 Prerequisites
 
 - Install Node.js and npm: [https://nodejs.org/](https://nodejs.org/)
 - Register for an API key at the [Oxford Learner's Dictionaries API](https://languages.oup.com/oxford-learners-dictionaries-api/)
@@ -92,7 +94,7 @@ It uses Node.js to handle the API requests and Cheerio to parse and format the r
    echo 'APP_KEY=your_app_key_here' >> .env
    ```
 
-   (You may optionally include a base URL, though the script uses a hardcoded one.)
+   Optionally include a base URL, though the script uses a hardcoded one.
 
 4. Run the tool with:
 
@@ -100,7 +102,7 @@ It uses Node.js to handle the API requests and Cheerio to parse and format the r
    node src/index.js
    ```
 
-   By default, it fetches the entry for `"test_1"`. To fetch a different entry, modify the value of `entryId` in `src/index.js`.
+   By default, fetches the entry for `"test_1"`. To fetch a different word, change the `entryId` in `src/index.js`.
 
 5. Check the generated HTML in:
 
@@ -112,9 +114,9 @@ It uses Node.js to handle the API requests and Cheerio to parse and format the r
 
 ## 💡 Troubleshooting
 
-- ✅ Make sure your API credentials are in `.env`
-- 🧪 Check for typos in your entry ID
-- ⚠️ Ensure Node.js is installed and compatible (v16+ recommended)
+- Make sure your API credentials are in `.env`
+- Check for typos in your entry ID
+- Ensure Node.js is installed and compatible (v16+ recommended)
 
 ---
 
