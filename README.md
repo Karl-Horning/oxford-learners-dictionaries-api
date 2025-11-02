@@ -1,10 +1,15 @@
-# Oxford Learner's Dictionaries API Entry Fetcher
+# 📘 Oxford Learner's Dictionaries API Entry Fetcher
+
+> ⚠️ **Archived Project — Proof of Concept (2023)**
+> Integrated the **Oxford Learner's Dictionaries API** into a **GraphQL endpoint** for the **Learnlight app**.
+> Built by Karl Horning as a 2023 prototype to support English learners.
+> This project is no longer actively maintained.
 
 ---
 
 ## 📖 Table of Contents
 
-- [Oxford Learner's Dictionaries API Entry Fetcher](#oxford-learners-dictionaries-api-entry-fetcher)
+- [📘 Oxford Learner's Dictionaries API Entry Fetcher](#-oxford-learners-dictionaries-api-entry-fetcher)
   - [📖 Table of Contents](#-table-of-contents)
   - [🤓 Overview](#-overview)
   - [🚀 Features](#-features)
@@ -16,22 +21,24 @@
   - [🎨 Styling](#-styling)
   - [📚 References](#-references)
   - [📜 License](#-license)
+  - [👤 Author](#-author)
 
 ---
 
 ## 🤓 Overview
 
-This project fetches dictionary entries from the Oxford Learner's Dictionaries API and converts them into styled, semantic HTML for reuse in educational tools or static sites.
+This Proof of Concept fetches dictionary entries from the **Oxford Learner's Dictionaries API** and converts them into **styled, semantic HTML** for use in educational tools or static sites.
 
-It uses Node.js to handle the API requests and Cheerio to parse and format the resulting HTML content. The output includes inline styles and optional CSS to make it more portable.
+It uses **Node.js** to make API requests and **Cheerio** to parse and format the resulting HTML content.
+The output includes inline styles and optional CSS for portability and readability.
 
 ---
 
 ## 🚀 Features
 
 - 🔎 Fetch definitions by Oxford Dictionary entry ID
-- 🔧 Parses HTML and extracts relevant sections with Cheerio
-- 🎨 Outputs semantic, accessible HTML with lightweight CSS
+- 🔧 Parse HTML and extract relevant sections with **Cheerio**
+- 🎨 Output semantic, accessible HTML with lightweight CSS
 - 📄 Save formatted content to a local file
 - 📦 Simple project structure for experimentation or integration
 - ✅ Modular codebase using modern JavaScript
@@ -44,7 +51,7 @@ It uses Node.js to handle the API requests and Cheerio to parse and format the r
 .
 ├── src/
 │   ├── index.js                     # Main entry point for executing the tool
-│   ├── data.js                
+│   ├── data.js
 │   ├── css/
 │   │   └── style.css                # Optional reusable stylesheet
 │   ├── data/                        # Fetches entry HTML from the Oxford API
@@ -53,10 +60,10 @@ It uses Node.js to handle the API requests and Cheerio to parse and format the r
 │   ├── js/
 │   │   └── script.js                # Auto-play pronunciation audio
 │   └── services/
-│   │   ├── formatEntry.service.js
-│   │   ├── request.service.js       # Handles API calls via HTTPS
-│   │   ├── writeToFile.service.js
-│   │   └── index.js                 # Formats, styles, and writes output
+│       ├── formatEntry.service.js
+│       ├── request.service.js       # Handles API calls via HTTPS
+│       ├── writeToFile.service.js
+│       └── index.js                 # Formats, styles, and writes output
 ├── .env                             # API credentials (not committed)
 ├── package.json
 └── README.md
@@ -70,6 +77,8 @@ It uses Node.js to handle the API requests and Cheerio to parse and format the r
 
 - Install Node.js and npm: [https://nodejs.org/](https://nodejs.org/)
 - Register for an API key at the [Oxford Learner's Dictionaries API](https://languages.oup.com/oxford-learners-dictionaries-api/)
+
+---
 
 ### 🔧 Installation
 
@@ -102,7 +111,8 @@ It uses Node.js to handle the API requests and Cheerio to parse and format the r
    node src/index.js
    ```
 
-   By default, fetches the entry for `"test_1"`. To fetch a different word, change the `entryId` in `src/index.js`.
+   By default, this fetches the entry for `"test_1"`.
+   To fetch a different word, change the `entryId` in `src/index.js`.
 
 5. Check the generated HTML in:
 
@@ -114,32 +124,33 @@ It uses Node.js to handle the API requests and Cheerio to parse and format the r
 
 ## 💡 Troubleshooting
 
-- Make sure your API credentials are in `.env`
-- Check for typos in your entry ID
-- Ensure Node.js is installed and compatible (v16+ recommended)
+- Ensure your API credentials are correctly stored in `.env`
+- Double-check the entry ID for typos
+- Confirm Node.js (v16+) is installed and compatible
 
 ---
 
 ## 🎨 Styling
 
-The file `src/css/style.css` contains optional styling for HTML output. It is minimal but improves readability and accessibility.
+The file `src/css/style.css` provides optional styling for the HTML output.
+It's minimal but improves **readability and accessibility**.
 
 Highlights:
 
-- Semantically styled sections such as `entry`, `headword`, `definition`, and `example`
-- Font fallback stack for legibility
+- Semantic elements for `entry`, `headword`, `definition`, and `example`
+- Fallback font stack for legibility
 - Inline emphasis for grammatical notes, register labels, and audio
-- Borders and padding for definition separation
-- Custom classes such as `.audio-playing` for client-side interactivity
+- Borders and padding to visually separate definitions
+- `.audio-playing` class for client-side interactivity
 
-You can choose to inline styles or link this stylesheet from the output.
+You can inline styles or link this stylesheet from the generated output.
 
 ---
 
 ## 📚 References
 
 - [Oxford Learner's Dictionaries API](https://languages.oup.com/oxford-learners-dictionaries-api/)
-- [IDM SkPublish - REST API documentation](https://www.oxfordlearnersdictionaries.com/api/v1/documentation/html)
+- [IDM SkPublish – REST API documentation](https://www.oxfordlearnersdictionaries.com/api/v1/documentation/html)
 - [DPS PitchLeads API Client Libraries](http://dps.api-lib.idm.fr)
 
 ---
@@ -148,6 +159,12 @@ You can choose to inline styles or link this stylesheet from the output.
 
 This project is licensed under the [MIT License](LICENSE).
 
+> 💤 **Archived Notice:**
+> This repository is provided for **reference and educational purposes only**.
+> It is **no longer actively maintained** and may not reflect current API formats.
+
 ---
+
+## 👤 Author
 
 Made with ❤️ by [Karl Horning](https://github.com/Karl-Horning)
