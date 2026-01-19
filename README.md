@@ -1,4 +1,4 @@
-# 📘 Oxford Learner's Dictionaries API Entry Fetcher
+# Oxford Learner's Dictionaries API Entry Fetcher
 
 > ⚠️ **Archived Project — Proof of Concept (2023)**
 > Integrated the **Oxford Learner's Dictionaries API** into a **GraphQL endpoint** for the **Learnlight app**.
@@ -7,25 +7,25 @@
 
 ---
 
-## 📖 Table of Contents
+## Table of Contents
 
-- [📘 Oxford Learner's Dictionaries API Entry Fetcher](#-oxford-learners-dictionaries-api-entry-fetcher)
-  - [📖 Table of Contents](#-table-of-contents)
-  - [🤓 Overview](#-overview)
-  - [🚀 Features](#-features)
-  - [📁 Project Structure](#-project-structure)
-  - [🛠️ Getting Started](#️-getting-started)
-    - [📦 Prerequisites](#-prerequisites)
-    - [🔧 Installation](#-installation)
-  - [💡 Troubleshooting](#-troubleshooting)
-  - [🎨 Styling](#-styling)
-  - [📚 References](#-references)
-  - [📜 License](#-license)
-  - [👤 Author](#-author)
+- [Oxford Learner's Dictionaries API Entry Fetcher](#oxford-learners-dictionaries-api-entry-fetcher)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Features](#features)
+  - [Project Structure](#project-structure)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+  - [Troubleshooting](#troubleshooting)
+  - [Styling](#styling)
+  - [References](#references)
+  - [License](#license)
+  - [Author](#author)
 
 ---
 
-## 🤓 Overview
+## Overview
 
 This Proof of Concept fetches dictionary entries from the **Oxford Learner's Dictionaries API** and converts them into **styled, semantic HTML** for use in educational tools or static sites.
 
@@ -34,18 +34,18 @@ The output includes inline styles and optional CSS for portability and readabili
 
 ---
 
-## 🚀 Features
+## Features
 
-- 🔎 Fetch definitions by Oxford Dictionary entry ID
-- 🔧 Parse HTML and extract relevant sections with **Cheerio**
-- 🎨 Output semantic, accessible HTML with lightweight CSS
-- 📄 Save formatted content to a local file
-- 📦 Simple project structure for experimentation or integration
-- ✅ Modular codebase using modern JavaScript
+- Fetch definitions by Oxford Dictionary entry ID
+- Parse HTML and extract relevant sections with **Cheerio**
+- Output semantic, accessible HTML with lightweight CSS
+- Save formatted content to a local file
+- Simple project structure for experimentation or integration
+- Modular codebase using modern JavaScript
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 .
@@ -71,16 +71,16 @@ The output includes inline styles and optional CSS for portability and readabili
 
 ---
 
-## 🛠️ Getting Started
+## Getting Started
 
-### 📦 Prerequisites
+### Prerequisites
 
 - Install Node.js and npm: [https://nodejs.org/](https://nodejs.org/)
 - Register for an API key at the [Oxford Learner's Dictionaries API](https://languages.oup.com/oxford-learners-dictionaries-api/)
 
 ---
 
-### 🔧 Installation
+### Installation
 
 1. Clone this repository:
 
@@ -122,7 +122,7 @@ The output includes inline styles and optional CSS for portability and readabili
 
 ---
 
-## 💡 Troubleshooting
+## Troubleshooting
 
 - Ensure your API credentials are correctly stored in `.env`
 - Double-check the entry ID for typos
@@ -130,7 +130,7 @@ The output includes inline styles and optional CSS for portability and readabili
 
 ---
 
-## 🎨 Styling
+## Styling
 
 The file `src/css/style.css` provides optional styling for the HTML output.
 It's minimal but improves **readability and accessibility**.
@@ -147,7 +147,7 @@ You can inline styles or link this stylesheet from the generated output.
 
 ---
 
-## 📚 References
+## References
 
 - [Oxford Learner's Dictionaries API](https://languages.oup.com/oxford-learners-dictionaries-api/)
 - [IDM SkPublish – REST API documentation](https://www.oxfordlearnersdictionaries.com/api/v1/documentation/html)
@@ -155,16 +155,16 @@ You can inline styles or link this stylesheet from the generated output.
 
 ---
 
-## 📜 License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
 
-> 💤 **Archived Notice:**
+> ⚠️ **Archived Notice:**
 > This repository is provided for **reference and educational purposes only**.
 > It is **no longer actively maintained** and may not reflect current API formats.
 
 ---
 
-## 👤 Author
+## Author
 
 Made with ❤️ by [Karl Horning](https://github.com/Karl-Horning)
