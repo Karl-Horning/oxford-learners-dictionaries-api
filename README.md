@@ -4,9 +4,7 @@
 > Integrated the **Oxford Learner's Dictionaries API** into a **GraphQL endpoint** for the **Learnlight app**.
 > Built by Karl Horning as a 2023 prototype to support English learners.
 > This project is no longer actively maintained.
-
----
-
+>
 ## Table of Contents
 
 - [Oxford Learner's Dictionaries API Entry Fetcher](#oxford-learners-dictionaries-api-entry-fetcher)
@@ -23,16 +21,12 @@
   - [License](#license)
   - [Author](#author)
 
----
-
 ## Overview
 
 This Proof of Concept fetches dictionary entries from the **Oxford Learner's Dictionaries API** and converts them into **styled, semantic HTML** for use in educational tools or static sites.
 
 It uses **Node.js** to make API requests and **Cheerio** to parse and format the resulting HTML content.
 The output includes inline styles and optional CSS for portability and readability.
-
----
 
 ## Features
 
@@ -42,8 +36,6 @@ The output includes inline styles and optional CSS for portability and readabili
 - Save formatted content to a local file
 - Simple project structure for experimentation or integration
 - Modular codebase using modern JavaScript
-
----
 
 ## Project Structure
 
@@ -69,16 +61,12 @@ The output includes inline styles and optional CSS for portability and readabili
 └── README.md
 ```
 
----
-
 ## Getting Started
 
 ### Prerequisites
 
 - Install Node.js and npm: [https://nodejs.org/](https://nodejs.org/)
 - Register for an API key at the [Oxford Learner's Dictionaries API](https://languages.oup.com/oxford-learners-dictionaries-api/)
-
----
 
 ### Installation
 
@@ -120,15 +108,11 @@ The output includes inline styles and optional CSS for portability and readabili
    src/.temp/output.html
    ```
 
----
-
 ## Troubleshooting
 
 - Ensure your API credentials are correctly stored in `.env`
 - Double-check the entry ID for typos
 - Confirm Node.js (v16+) is installed and compatible
-
----
 
 ## Styling
 
@@ -145,15 +129,11 @@ Highlights:
 
 You can inline styles or link this stylesheet from the generated output.
 
----
-
 ## References
 
 - [Oxford Learner's Dictionaries API](https://languages.oup.com/oxford-learners-dictionaries-api/)
 - [IDM SkPublish – REST API documentation](https://www.oxfordlearnersdictionaries.com/api/v1/documentation/html)
 - [DPS PitchLeads API Client Libraries](http://dps.api-lib.idm.fr)
-
----
 
 ## License
 
@@ -162,9 +142,7 @@ This project is licensed under the [MIT License](LICENSE).
 > ⚠️ **Archived Notice:**
 > This repository is provided for **reference and educational purposes only**.
 > It is **no longer actively maintained** and may not reflect current API formats.
-
----
-
+>
 ## Author
 
 Made with ❤️ by [Karl Horning](https://github.com/Karl-Horning)
