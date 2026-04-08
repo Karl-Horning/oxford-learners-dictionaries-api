@@ -4,7 +4,7 @@ require("dotenv").config({ path: path.resolve(__dirname, "../../.env") });
 
 // Constants for configuration parameters
 const BASE_URL = process.env.BASE_URL;
-const API_KEY = process.env.API_KEY;
+const APP_KEY = process.env.APP_KEY;
 
 /**
  * Builds the API URL with the specified format.
@@ -27,7 +27,7 @@ const buildRequestOptions = () => {
     return {
         method: "GET",
         headers: {
-            accessKey: API_KEY,
+            accessKey: APP_KEY,
         },
     };
 };
@@ -70,6 +70,10 @@ const fetchData = ({ urlSuffix, params }) => {
             });
 
             res.on("end", () => {
+                if (res.statusCode < 200 || res.statusCode >= 300) {
+                    reject(new Error(`Request failed with status ${res.statusCode}`));
+                    return;
+                }
                 try {
                     const entryContent = handleResponseData(data);
                     resolve(entryContent);
