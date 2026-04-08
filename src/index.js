@@ -7,7 +7,7 @@ const { formatEntry, writeHtmlToFile } = require("./services");
  * @param {string} entry - The entry identifier.
  * @returns {Promise<string | undefined>} A Promise that resolves with the formatted entry content, or undefined if there's an error.
  */
-getData = async (entry) => {
+const getData = async (entry) => {
     try {
         console.log(`Getting entry: ${entry}`);
         const entryContent = await getEntry(entry);
