@@ -2,13 +2,13 @@
   "name": "oxford-learners-dictionaries-api",
   "version": "1.0.0",
   "description": "Get entries from the Oxford Learner's Dictionaries API",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Karl Horning",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
     "dotenv": "^16.3.1"
