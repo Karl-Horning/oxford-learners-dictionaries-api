@@ -11,13 +11,7 @@ const path = require("path");
 const writeHtmlToFile = async (html) => {
     try {
         const fileLocation = path.resolve(__dirname, "../.temp");
-
-        // Check if the directory exists, create it if not
-        try {
-            await fs.access(fileLocation);
-        } catch (error) {
-            await fs.mkdir(fileLocation, { recursive: true });
-        }
+        await fs.mkdir(fileLocation, { recursive: true });
 
         const filePath = path.join(fileLocation, "output.html");
 
