@@ -3,9 +3,11 @@
 > ⚠️ **Archived — Proof of Concept (2023)**
 > No longer actively maintained. Provided for reference only.
 
-Fetches dictionary entries from the Oxford Learner's Dictionaries API and converts them into styled, semantic HTML for use in educational tools or static sites.
+Fetches dictionary entries from the Oxford Learner's Dictionaries API and converts them into styled HTML, originally built as a proof of concept for a GraphQL-based language learning platform.
 
 Built with Node.js and [Cheerio](https://cheerio.js.org/) for HTML parsing. Output includes inline styles and an optional stylesheet for portability.
+
+The API returns JSON, but the definition field contains a raw HTML string — the full content of the Oxford dictionary page for that entry. Cheerio is used to parse that HTML and extract only the required fields.
 
 ## Project Structure
 
@@ -78,7 +80,7 @@ Built with Node.js and [Cheerio](https://cheerio.js.org/) for HTML parsing. Outp
 
 ## References
 
-- [Oxford Learner's Dictionaries API](https://languages.oup.com/oxford-learners-dictionaries-api/)
+- [Oxford Learner's Dictionaries API](https://languages.oup.com/oxford-learners-dictionaries-api/) _(link may be broken)_
 - [IDM SkPublish – REST API documentation](https://www.oxfordlearnersdictionaries.com/api/v1/documentation/html)
 - [DPS PitchLeads API Client Libraries](http://dps.api-lib.idm.fr)
 

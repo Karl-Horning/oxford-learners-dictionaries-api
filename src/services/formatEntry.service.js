@@ -56,10 +56,7 @@ const addCopyrightFooter = (main, q) => {
 const removeElements = ($, selectors) => {
     try {
         selectors.forEach((selector) => {
-            const elements = $(selector);
-            if (elements.length > 0) {
-                elements.remove();
-            }
+            $(selector).remove();
         });
     } catch (error) {
         console.error(
@@ -171,7 +168,6 @@ const formatEntry = (html) => {
         "span.symbol-g",
         // Removes the topics under 'see also'
         "span.topic-g",
-        // Add more selectors as needed
     ];
 
     try {
