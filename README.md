@@ -84,6 +84,6 @@ The API returns JSON, but the definition field contains a raw HTML string — th
 - [IDM SkPublish – REST API documentation](https://www.oxfordlearnersdictionaries.com/api/v1/documentation/html)
 - [DPS PitchLeads API Client Libraries](http://dps.api-lib.idm.fr)
 
-## Licence
+## License
 
-MIT © 2023 [Karl Horning](https://github.com/Karl-Horning)
+Released under the [MIT License](./LICENSE) by [Karl Horning](https://github.com/Karl-Horning).
