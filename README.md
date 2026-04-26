@@ -1,7 +1,6 @@
 # Oxford Learner's Dictionaries API Entry Fetcher
 
-> ⚠️ **Archived — Proof of Concept (2023)**
-> No longer actively maintained. Provided for reference only.
+> **Archived.** This proof-of-concept was successfully shipped to production. It is kept here as a portfolio reference only; no further changes are planned.
 
 Fetches dictionary entries from the Oxford Learner's Dictionaries API and converts them into styled HTML, originally built as a proof of concept for a GraphQL-based language learning platform.
 
